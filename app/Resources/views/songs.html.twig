@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>
+        {% block title %}{{ site_name }}{% endblock %}
+    </title>
+    {% block stylesheets %}
+        <link href="{{ asset('bower_components/angular-bootstrap/ui-bootstrap-csp.css') }}" rel="stylesheet">
+        <link href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    {% endblock %}
+
+</head>
+<body class="gray-bg">
+{% block body %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bower_components/angular/angular.min.js') }}"></script>
+    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bower_components/angular-bootstrap/ui-bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js') }}"></script>
+    <script src="{{ asset('web/src/app.js') }}"></script>
+
+    <script src="{{ asset('web/src/songsList/songsList.controller.js') }}"></script>
+    {#<script src="{{ asset('src/js/main/services/company.dataservice.js') }}"></script>#}
+
+{% endblock %}
+
+</body>
+</html>
