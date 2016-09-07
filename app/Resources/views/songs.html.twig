@@ -6,24 +6,35 @@
         {% block title %}{{ site_name }}{% endblock %}
     </title>
     {% block stylesheets %}
-        <link href="{{ asset('bower_components/angular-bootstrap/ui-bootstrap-csp.css') }}" rel="stylesheet">
-        <link href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/angular-bootstrap/ui-bootstrap-csp.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     {% endblock %}
 
 </head>
-<body class="gray-bg">
-{% block body %}
-{% endblock %}
+<body ng-controller="AppController" class="gray-bg">
+<!--[if lt IE 7]>
+<p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please
+    <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+</p>
+<![endif]-->
+
+<div ui-view></div>
+</body>
 
 {% block javascripts %}
-    <script src="{{ asset('bower_components/angular/angular.min.js') }}"></script>
-    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('bower_components/angular-bootstrap/ui-bootstrap.min.js') }}"></script>
-    <script src="{{ asset('bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js') }}"></script>
-    <script src="{{ asset('web/src/app.js') }}"></script>
+    <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/angular/angular.js') }}"></script>
+    <script src="{{ asset('assets/vendor/angular-ui-router/release/angular-ui-router.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/angular-bootstrap/ui-bootstrap.min.js') }}"></script>
 
-    <script src="{{ asset('web/src/songsList/songsList.controller.js') }}"></script>
+    <script src="{{ asset('src/app.js') }}"></script>
+    <script src="{{ asset('dist/templates.js') }}"></script>
+    <script src="{{ asset('src/app.controller.js') }}"></script>
+    <script src="{{ asset('src/songsList/songsList.controller.js') }}"></script>
+    <script src="{{ asset('src/config.js') }}"></script>
+
     {#<script src="{{ asset('src/js/main/services/company.dataservice.js') }}"></script>#}
 
 {% endblock %}
